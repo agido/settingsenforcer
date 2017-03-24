@@ -20,6 +20,23 @@
     <name>Settings Enforcer</name>
     <version>0.1.0</version>
 
+    <vendor email="dennisrieks@agido.com" url="https://github.com/agido/settingsenforcer/">agido GmbH</vendor>
+
+    <description>
+        <![CDATA[
+        <p>
+        Supports storing of IDEA Settings under version control that are normally stored as user settings.
+        </p>
+        ]]>
+    </description>
+
+    <change-notes>
+        <![CDATA[
+        <b>0.1.0</b> <b>2017/03/24</b>
+        Initial release of the plugin.
+        ]]>
+    </change-notes>
+
     <idea-version since-build="145.0"/>
 
     <depends>com.intellij.modules.lang</depends>
