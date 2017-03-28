@@ -19,6 +19,8 @@ import com.agido.idea.settings.config.ConfigGroup;
 import com.agido.idea.settings.config.ConfigOption;
 import com.agido.idea.settings.config.SettingsEnforcerState;
 import com.agido.idea.settings.config.SettingsEnforcerStateComponent;
+import com.agido.idea.settings.project.ProjectSettingComponent;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
@@ -54,6 +56,9 @@ class IgnoreSettingsUpdater {
         } else {
             root.dispose();
         }
+        // also check project settings
+        module.getProject().getComponent(ProjectSettingComponent.class).projectOpened();
+        ApplicationManager.getApplication().saveSettings();
     }
 
     private static boolean update(ModifiableRootModel root, ConfigGroup config) {
