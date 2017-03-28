@@ -16,7 +16,6 @@
  */
 -->
 <idea-plugin version="2">
-    <depends>org.jetbrains.idea.maven</depends>
 
     <extensions defaultExtensionNs="com.agido.idea.settings">
         <Group implementation="com.agido.idea.settings.plugins.maven.MavenGroup"/>
