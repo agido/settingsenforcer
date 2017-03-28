@@ -19,10 +19,6 @@ import com.agido.idea.settings.Group;
 import com.intellij.openapi.extensions.Extensions;
 
 public class MavenGroup implements Group {
-    public static Group getInstance() {
-        return Extensions.findExtension(EP_NAME, MavenGroup.class);
-    }
-
     @Override
     public String getId() {
         return "maven";
