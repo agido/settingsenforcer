@@ -18,7 +18,7 @@
 <idea-plugin version="2">
     <id>com.agido.idea.settings</id>
     <name>Settings Enforcer</name>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <vendor email="dennis.rieks@agido.com" url="https://github.com/agido/settingsenforcer/">agido GmbH</vendor>
 
@@ -34,6 +34,9 @@
         <![CDATA[
         <b>0.1.0</b> <b>2017/03/24</b>
         Initial release of the plugin.
+
+        <b>0.1.1</b> <b>2017/03/28</b>
+        Added Support for scala.enableCompileServer
         ]]>
     </change-notes>
 
@@ -42,6 +45,7 @@
     <depends>com.intellij.modules.lang</depends>
     <depends optional="true" config-file="maven.xml">org.jetbrains.idea.maven</depends>
     <depends optional="true" config-file="java.xml">com.intellij.modules.java</depends>
+    <depends optional="true" config-file="scala.xml">org.intellij.scala</depends>
 
     <project-components>
         <component>
