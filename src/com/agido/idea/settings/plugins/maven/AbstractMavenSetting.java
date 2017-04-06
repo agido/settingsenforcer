@@ -35,4 +35,8 @@ public abstract class AbstractMavenSetting<T> extends ProjectSetting<T> {
     static MavenGeneralSettings getGeneralSettings(Project project) {
         return MavenProjectsManager.getInstance(project).getGeneralSettings();
     }
+
+    static MavenProjectsManager getMavenProjectsManager(Project project) {
+        return MavenProjectsManager.getInstance(project);
+    }
 }
