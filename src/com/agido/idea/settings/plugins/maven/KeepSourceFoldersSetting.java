@@ -30,7 +30,7 @@ public class KeepSourceFoldersSetting extends AbstractMavenSetting<Boolean> {
     }
 
     @Override
-    protected Boolean get(Project project) {
+    protected Boolean get(Project project, Boolean newValue) {
         return getImportingSettings(project).isKeepSourceFolders();
     }
 

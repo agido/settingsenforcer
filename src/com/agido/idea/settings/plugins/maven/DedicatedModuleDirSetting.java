@@ -30,7 +30,7 @@ public class DedicatedModuleDirSetting extends AbstractMavenSetting<String> {
     }
 
     @Override
-    protected String get(Project project) {
+    protected String get(Project project, String newValue) {
         return getImportingSettings(project).getDedicatedModuleDir();
     }
 

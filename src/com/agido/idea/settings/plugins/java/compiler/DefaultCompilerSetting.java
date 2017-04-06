@@ -30,7 +30,7 @@ public class DefaultCompilerSetting extends AbstractJavaCompilerSetting<BackendC
     }
 
     @Override
-    protected BackendCompiler get(Project project) {
+    protected BackendCompiler get(Project project, BackendCompiler newValue) {
         return Compiler.getConfiguration(project).getDefaultCompiler();
     }
 

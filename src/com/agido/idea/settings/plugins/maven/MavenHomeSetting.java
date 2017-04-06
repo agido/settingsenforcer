@@ -30,7 +30,7 @@ public class MavenHomeSetting extends AbstractMavenSetting<String> {
     }
 
     @Override
-    protected String get(Project project) {
+    protected String get(Project project, String newValue) {
         return getGeneralSettings(project).getMavenHome();
     }
 

@@ -30,7 +30,7 @@ public class GenerateNoWarningsSetting extends AbstractEclipseCompilerSetting<Bo
     }
 
     @Override
-    protected Boolean get(Project project) {
+    protected Boolean get(Project project, Boolean newValue) {
         return getOptions(project).GENERATE_NO_WARNINGS;
     }
 

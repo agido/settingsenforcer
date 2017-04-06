@@ -28,8 +28,8 @@ public abstract class ProjectSetting<T> implements Setting<T> {
     }
 
     String apply(String value, Project project) {
-        T oldValue = get(project);
         T newValue = convert(value, project);
+        T oldValue = get(project, newValue);
         if (newValue == null) {
             return String.format("Invalid value '%s' for %s", value, Setting.id(this));
         } else if (!Objects.equal(oldValue, newValue)) {
@@ -39,7 +39,7 @@ public abstract class ProjectSetting<T> implements Setting<T> {
         return null;
     }
 
-    protected abstract T get(Project project);
+    protected abstract T get(Project project, T newValue);
 
     protected abstract void set(T value, Project project);
 }

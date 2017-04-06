@@ -30,7 +30,7 @@ public class EnableCompileServerSetting extends AbstractScalaSetting<Boolean> {
     }
 
     @Override
-    protected Boolean get(Project project) {
+    protected Boolean get(Project project, Boolean newValue) {
         return getScalaCompileServerSettings().COMPILE_SERVER_ENABLED;
     }
 

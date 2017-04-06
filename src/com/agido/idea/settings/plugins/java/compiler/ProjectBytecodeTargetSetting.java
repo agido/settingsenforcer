@@ -30,7 +30,7 @@ public class ProjectBytecodeTargetSetting extends AbstractJavaCompilerSetting<St
     }
 
     @Override
-    protected String get(Project project) {
+    protected String get(Project project, String newValue) {
         return Compiler.getConfiguration(project).getProjectBytecodeTarget();
     }
 

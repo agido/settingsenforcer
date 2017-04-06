@@ -30,7 +30,7 @@ public class DeprecationSetting extends AbstractEclipseCompilerSetting<Boolean> 
     }
 
     @Override
-    protected Boolean get(Project project) {
+    protected Boolean get(Project project, Boolean newValue) {
         return getOptions(project).DEPRECATION;
     }
 
