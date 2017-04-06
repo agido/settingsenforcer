@@ -21,6 +21,7 @@
         <Group implementation="com.agido.idea.settings.plugins.maven.MavenGroup"/>
         <Setting implementation="com.agido.idea.settings.plugins.maven.DedicatedModuleDirSetting"/>
         <Setting implementation="com.agido.idea.settings.plugins.maven.KeepSourceFoldersSetting"/>
+        <Setting implementation="com.agido.idea.settings.plugins.maven.MavenHomeSetting"/>
     </extensions>
 
 </idea-plugin>

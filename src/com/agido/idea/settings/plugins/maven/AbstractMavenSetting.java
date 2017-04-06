@@ -18,6 +18,7 @@ package com.agido.idea.settings.plugins.maven;
 import com.agido.idea.settings.Group;
 import com.agido.idea.settings.project.ProjectSetting;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.idea.maven.project.MavenGeneralSettings;
 import org.jetbrains.idea.maven.project.MavenImportingSettings;
 import org.jetbrains.idea.maven.project.MavenProjectsManager;
 
@@ -29,5 +30,9 @@ public abstract class AbstractMavenSetting<T> extends ProjectSetting<T> {
 
     static MavenImportingSettings getImportingSettings(Project project) {
         return MavenProjectsManager.getInstance(project).getImportingSettings();
+    }
+
+    static MavenGeneralSettings getGeneralSettings(Project project) {
+        return MavenProjectsManager.getInstance(project).getGeneralSettings();
     }
 }
