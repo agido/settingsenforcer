@@ -1,0 +1,10 @@
+<plugin-repository>
+    <category name="Settings">
+        <idea-plugin>
+            <id>com.agido.idea.settings</id>
+            <name>Settings Enforcer</name>
+            <version>0.1.2</version>
+            <downloadUrl>SettingsEnforcer.jar</downloadUrl>
+        </idea-plugin>
+    </category>
+</plugin-repository>
