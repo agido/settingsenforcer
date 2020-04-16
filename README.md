@@ -1,0 +1,1 @@
+see https://plugins.jetbrains.com/plugin/9585-settings-enforcer
