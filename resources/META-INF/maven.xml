@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 -->
-<idea-plugin version="2">
+<idea-plugin>
 
     <extensions defaultExtensionNs="com.agido.idea.settings">
         <Group implementation="com.agido.idea.settings.plugins.maven.MavenGroup"/>

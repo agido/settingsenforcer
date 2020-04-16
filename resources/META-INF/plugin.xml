@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 -->
-<idea-plugin version="2">
+<idea-plugin>
     <id>com.agido.idea.settings</id>
     <name>Settings Enforcer</name>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
 
     <vendor email="dennis.rieks@agido.com" url="https://github.com/agido/settingsenforcer/">agido GmbH</vendor>
 
@@ -43,6 +43,10 @@
         <br/>
         <b>0.1.2</b> <b>2017/04/06</b>
         Added Support for maven.home and maven.profiles
+
+        <br/>
+        <b>0.1.3</b> <b>2020/04/16</b>
+        Added Support for IntelliJ 2020.1, removed support for scala settings
         ]]>
     </change-notes>
 
@@ -51,7 +55,6 @@
     <depends>com.intellij.modules.lang</depends>
     <depends optional="true" config-file="maven.xml">org.jetbrains.idea.maven</depends>
     <depends optional="true" config-file="java.xml">com.intellij.modules.java</depends>
-    <depends optional="true" config-file="scala.xml">org.intellij.scala</depends>
 
     <project-components>
         <component>
