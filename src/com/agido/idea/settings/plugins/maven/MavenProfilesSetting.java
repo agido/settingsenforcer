@@ -17,8 +17,13 @@ package com.agido.idea.settings.plugins.maven;
 
 import com.agido.idea.settings.types.StringType;
 import com.google.common.collect.Sets;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.idea.maven.model.MavenExplicitProfiles;
+import org.jetbrains.idea.maven.project.MavenProjectsManager;
+import org.jetbrains.idea.maven.project.MavenProjectsTree;
 
 import java.util.Collection;
 import java.util.TreeSet;
@@ -85,7 +90,31 @@ public class MavenProfilesSetting extends AbstractMavenSetting<String> {
         return getMavenProjectsManager(project).getExplicitProfiles();
     }
 
+    private static void ensureExplicitProfilesAreSet(MavenProjectsManager manager, MavenExplicitProfiles profiles) {
+        @NotNull MavenExplicitProfiles explicitProfiles = manager.getExplicitProfiles();
+        if (!explicitProfiles.getEnabledProfiles().containsAll(profiles.getEnabledProfiles())
+                || !explicitProfiles.getDisabledProfiles().containsAll(profiles.getDisabledProfiles())
+        ) {
+            explicitProfiles.getEnabledProfiles().addAll(profiles.getEnabledProfiles());
+            explicitProfiles.getDisabledProfiles().addAll(profiles.getDisabledProfiles());
+            manager.setExplicitProfiles(explicitProfiles);
+        }
+    }
+
     private void setExplicitProfiles(Project project, MavenExplicitProfiles profiles) {
-        getMavenProjectsManager(project).setExplicitProfiles(profiles);
+        MavenProjectsManager manager = getMavenProjectsManager(project);
+        class Activity implements Runnable, DumbAware {
+            @Override
+            public void run() {
+                ensureExplicitProfilesAreSet(manager, profiles);
+                manager.addProjectsTreeListener(new MavenProjectsTree.Listener() {
+                    @Override
+                    public void profilesChanged() {
+                        ensureExplicitProfilesAreSet(manager, profiles);
+                    }
+                });
+            }
+        }
+        StartupManager.getInstance(project).registerPostStartupActivity(new Activity());
     }
 }

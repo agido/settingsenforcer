@@ -18,7 +18,7 @@
 <idea-plugin>
     <id>com.agido.idea.settings</id>
     <name>Settings Enforcer</name>
-    <version>0.1.4</version>
+    <version>0.1.5</version>
 
     <vendor email="intellij@agido.com" url="https://github.com/agido/settingsenforcer/">agido_GmbH</vendor>
 
@@ -51,6 +51,10 @@
         <br/>
         <b>0.1.4</b> <b>2020/04/16</b>
         EMail address and vendor id changed
+
+        <br/>
+        <b>0.1.5</b> <b>2021/03/31</b>
+        NullPointerException fix
         ]]>
     </change-notes>
 
